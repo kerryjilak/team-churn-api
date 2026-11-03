@@ -1,15 +1,16 @@
-from ucimlrepo import fetch_ucirepo
+import json
+from pathlib import Path
+
+import joblib
+import numpy as np
+import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report, roc_auc_score
-import pandas as pd
-import numpy as np
-from pathlib import Path
-import json
-import joblib
+from ucimlrepo import fetch_ucirepo
 
 dataset = fetch_ucirepo(id=563)
 
